@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+    <link rel="stylesheet" href="stylesheets/cart.css" />
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script src="javascripts/main.js" async></script>
+    <title>First JQueryMobile Project</title>
+</head>
+
+<body>
+
+    <!-- This is the first page -->
+    <section id="home" data-role="page" class="background-container">
+        <div class="background"></div>
+        <div data-role="header" data-theme='b' id="header">
+            <h2>TechThreads</h2>
+            <div data-role="navbar" data-theme='b' id="nav">
+                <!-- /navbar -->
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#products-page">Products</a></li>
+                    <li><a href="#cart">Cart</a></li>
+                    <li><a href="#reviews">Reviews</a></li>
+                </ul>
+            </div><!-- /navbar -->
+        </div>
+
+        <div data-role="main" class="ui-content" data-theme='e'>
+            <h1>Welcome to TechThreads!</h1>
+            <p>We are the ultimate destination for tech enthusiasts looking for
+                stylish and comfortable t-shirts that showcase their passion for technology.</p>
+            <h3>Description of the course project</h2>
+                <p>The idea of our project is pretty intuitive if you navigate throughout the website.
+                    We have a home page with the description of our project and a button that takes you to the
+                    "Products" page.
+                    In the Products page, users can view products (t-shirts) and add them to the 'cart' which will be
+                    displayed in the "Cart" page.
+                    Another functionality of the "Cart" page is that users can add reviews/rate/comment the products and
+                    these will be displayed in the "Reviews" page.
+                    All pages have a header, content and footer section.</p><br>
+                <br>
+                <br>
+                <p><a href="#products-page" class="ui-btn">Shop now</a></p>
+        </div>
+        <div data-role="footer" data-theme='b' id="footer">
+            <h3>Copyrigtht 2023 by Exe & Isa</h3>
+        </div>
+    </section>
+
+    <!-- This is the second page -->
+    <section id="products-page" data-role="page">
+        <div data-role="header" data-theme='b' id="header">
+            <h2>Products</h2>
+            <div data-role="navbar" data-theme='b' id="nav">
+                <!-- /navbar -->
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#products-page">Products</a></li>
+                    <li><a href="#cart">Cart</a></li>
+                    <li><a href="#reviews">Reviews</a></li>
+                </ul>
+            </div><!-- /navbar -->
+        </div>
+
+        <!-- content -->
+        <div data-role="main" class="ui-content" data-theme='e'>
+            <h1>Shop T-Shirts</h1>
+            <div class="product-list" id="product-list" data-filter="true" data-filter-placeholder="Search">
+                <div class="product">
+                    <br><a href="#"><img src="images/tshirt1.jpeg" class="ui-responsive shop-item-image" alt="shirt1"></a>
+                    <div class="p-details">
+                        <h4 class="shop-item-title" style="text-align: left;">The science</h4>
+                        <p style="text-align: left;">A sleek grey t-shirt featuring a bold, graphic print inspired by
+                            the latest technology advancements.</p>
+                        <h4 class="shop-item-price" style="text-align: left;">$25.99</h4>
+                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                        <a href="#reviews">Review this item</a>
+                    </div>
+                </div>
+
+                <div class="product">
+                    <a href="#"><img src="images/tshirt2.jpeg" class="ui-responsive shop-item-image" alt="tshirt2"></a>
+                    <div class="p-details">
+                        <h4 class="shop-item-title" style="text-align: left;">Superpower</h4>
+                        <p style="text-align: left;">A bold black t-shirt with a graphic print depicting the ultimate
+                            software engineer superpower.</p>
+                        <h4 class="shop-item-price">$26.99</h4>
+                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                        <a href="#reviews">Review this item</a>
+                    </div>
+                </div>
+
+                <div class="product">
+                    <a href="#"><img src="images/tshirt3.jpeg" class="ui-responsive shop-item-image" alt="tshirt3"></a>
+                    <div class="p-details">
+                        <h4 class="shop-item-title" style="text-align: left;">Label</h4>
+                        <p style="text-align: left;">A classic black t-shirt with a modern twist, featuring a unique
+                            label box graphic showcasing the wearer's profession as a software engineer.</p>
+                        <h4 class="shop-item-price">$29.99</h4>
+                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                        <a href="#reviews">Review this item</a>
+                    </div>
+                </div>
+
+                <div class="product">
+                    <a href="#"><img src="images/tshirt4.jpeg" class="ui-responsive shop-item-image" alt="tshirt4"></a>
+                    <div class="p-details">
+                        <h4 class="shop-item-title" style="text-align: left;">Dictionary</h4>
+                        <p style="text-align: left;">A stylish black t-shirt featuring a playful definition of a
+                            software engineer as a wizard, complete with magic wand and code symbols.</p>
+                        <h4 class="shop-item-price">$26.99</h4>
+                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                        <a href="#reviews">Review this item</a>
+                    </div>
+                </div>
+
+                <div class="product">
+                    <a href="#"><img src="images/tshirt5.jpeg" class="ui-responsive shop-item-image" alt="tshirt5"></a>
+                    <div class="p-details">
+                        <h4 class="shop-item-title" style="text-align: left;">Technology</h4>
+                        <p style="text-align: left;">A stylish black t-shirt featuring a unique graphic print of cool
+                            glasses with a tech twist.</p>
+                        <h4 class="shop-item-price">$25.99</h4>
+                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                        <a href="#reviews">Review this item</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        
+
+        <!-- notes footer -->
+        <div data-role="footer" data-theme='b' id="footer">
+            <h3>Copyrigtht 2023 by Exe & Isa</h3>
+        </div>
+
+    </section>
+
+
+    <!-- =================================== -->
+    <!-- This is the third page -->
+    <section id="cart" data-role="page">
+        <!-- header -->
+        <div data-role="header" data-theme='b' id="header">
+            <h2>Cart</h2>
+            <div data-role="navbar" data-theme='b' id="nav">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#products-page">Products</a></li>
+                    <li><a href="#cart">Cart</a></li>
+                    <li><a href="#reviews">Reviews</a></li>
+                </ul>
+            </div><!-- /navbar -->
+        </div>
+        <div data-role="main" class="ui-content" data-theme='e'>
+            <h1>Shopping Cart</h1>
+            <section class="container content-section">
+                <div class="cart-row">
+                    <span class="cart-item cart-header cart-column">ITEM</span>
+                    <span class="cart-price cart-header cart-column">PRICE</span>
+                    <span class="cart-quantity cart-header cart-column">QUANTITY</span>
+                </div>
+                <div class="cart-items">
+                </div>
+                <div class="cart-total">
+                    <strong class="cart-total-title">Total</strong>
+                    <span class="cart-total-price">$0</span>
+                </div>
+                <strong>Add coupom</strong>
+                <input type="text"></input>
+                <button class="btn btn-primary btn-purchase" type="button">PURCHASE</button>
+            </section>
+        </div>
+
+        <div>
+            <h1>Coupons</h1>
+            <ul id="coupon-list">
+                <li data-id="tAc8">Save $5 on your next purchase</li>
+                <li data-id="fRb6">50% off any item</li>
+                <li data-id="qXy3">Free shipping on orders over $50</li>
+            </ul>
+            <section id="coupon-details" style="display: none;">
+                <h2>Coupon Details</h2>
+                <p id="coupon-name"></p>
+                <p id="coupon-discount"></p>
+                <p id="coupon-expiration"></p>
+                <p id="coupon-code"></p>
+            </section>
+        </div>
+
+
+
+        <!-- notes footer -->
+        <div data-role="footer" data-theme='b' id="footer">
+            <h3>Copyrigtht 2023 by Exe & Isa</h3>
+        </div>
+
+    </section>
+
+
+    <!-- =================================== -->
+    <!-- This is the fourth page -->
+    <section id="reviews" data-role="page">
+        <!-- header -->
+        <div data-role="header" data-theme='b' id="header">
+            <h2>Review Page</h2>
+            <div data-role="navbar" data-theme='b' id="nav">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#products-page">Products</a></li>
+                    <li><a href="#cart">Cart</a></li>
+                    <li><a href="#reviews">Reviews</a></li>
+                </ul>
+            </div>
+        </div> <!-- /navbar -->
+
+
+        <div data-role="main" class="ui-content" data-theme='e'>
+            <h1>Leave a review</h1>
+            <form id="reviewForm" onsubmit="addReview(event);">
+                <div class="ui-field-contain">
+                    <label for="product">Product:</label>
+                    <input type="text" name="product" id="product">
+                </div>
+                <div class="ui-field-contain">    
+                    <label for="name">Name:</label>
+                    <input type="text" name="name" id="nameInput">
+                </div>
+                <div class="ui-field-contain">
+                    <label for="review">Review:</label>
+                    <textarea name="review" id="commentInput"></textarea>
+                </div>
+                <div class="ui-field-contain">
+                    <label for="rating">Rating:</label>
+                    <input type="range" name="rating" id="ratingInput" min="1" max="5">
+                </div>
+                <button id="displayButton">Submit Review</button>
+            </form>
+        
+        
+            <br>
+            <h2>Reviews</h2>
+            <div id="reviewsContainer"></div>
+        
+            <ul data-role="listview">
+                <li>
+                    <h3>John Doe</h3>
+                    <p>This product is great! I highly recommend it.</p>
+                    <p>Rating: 4/5</p>
+                    <p>Product: The Science T-shirt</p>
+                </li>
+                <li>
+                    <h3>Jane Doe</h3>
+                    <p>I wasn't impressed with this product. It's overpriced and not worth it.</p>
+                    <p>Rating: 2/5</p>
+                    <p>Product: The Label T-shirt</p>
+                </li>
+            </ul>
+        
+        </div>
+        
+
+        <!-- notes footer -->
+        <div data-role="footer" data-theme='b' id="footer">
+            <h3>Copyrigtht 2023 by Exe & Isa</h3>
+        </div>
+    </section>
+
+
+</body>
+
+</html>
