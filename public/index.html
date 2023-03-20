@@ -225,24 +225,24 @@
 
         <div data-role="main" class="ui-content" data-theme='e'>
             <h1>Leave a review</h1>
-            <form id="reviewForm" onsubmit="addReview(event);">
+            <form id="reviewForm">
                 <div class="ui-field-contain">
                     <label for="product">Product:</label>
                     <input type="text" name="product" id="product">
                 </div>
                 <div class="ui-field-contain">    
                     <label for="name">Name:</label>
-                    <input type="text" name="name" id="nameInput">
+                    <input type="text" name="name" id="name">
                 </div>
                 <div class="ui-field-contain">
                     <label for="review">Review:</label>
-                    <textarea name="review" id="commentInput"></textarea>
+                    <textarea name="review" id="comment"></textarea>
                 </div>
                 <div class="ui-field-contain">
                     <label for="rating">Rating:</label>
-                    <input type="range" name="rating" id="ratingInput" min="1" max="5">
+                    <input type="range" name="rating" id="rating" min="1" max="5">
                 </div>
-                <button id="displayButton">Submit Review</button>
+                <button type="submit" id="submitReviewButton">Submit Review</button>
             </form>
         
         

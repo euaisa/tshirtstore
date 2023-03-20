@@ -32,18 +32,10 @@ function ready() {
     var form = document.getElementById("reviewForm");
     form.addEventListener("submit", function (event) {
         event.preventDefault();
-
-        var name = document.getElementById("nameInput").value;
-        var rating = document.getElementById("ratingInput").value;
-        var comment = document.getElementById("commentInput").value;
-
-        var review = new Review(name, rating, comment);
-        reviews.push(review);
+        addReview();
 
     });
 
-    var button = document.getElementById("displayButton");
-    button.addEventListener("click", displayReviews);
     // Show the initial list of coupons
     showCouponList();
 }
