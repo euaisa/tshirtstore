@@ -1,3 +1,21 @@
+// Define the Coupon class
+class Coupon {
+    constructor(name, discount, expiration, code) {
+        this.ID = Math.random().toString(16).slice(5);
+        this.name = name;
+        this.discount = discount;
+        this.expiration = expiration;
+        this.code = code;
+    }
+}
+
+// Define the coupons array
+const coupons = [
+    new Coupon("Save $5 on your next purchase", "$5", "2/28/2023", "tAc8"),
+    new Coupon("50% off any item", "50%", "3/31/2023", "fRb6"),
+    new Coupon("Free shipping on orders over $50", "Free", "4/30/2023", "qXy3"),
+];
+
 if (document.readyState == 'loading') {
     document.addEventListener('DOMContentLoaded', ready)
 } else {
@@ -32,12 +50,36 @@ function ready() {
     var form = document.getElementById("reviewForm");
     form.addEventListener("submit", function (event) {
         event.preventDefault();
-        addReview();
+        postReview();
 
     });
 
     // Show the initial list of coupons
     showCouponList();
+    loadReviews();
+}
+
+function postReview() {
+    let review = {
+        name: document.getElementById("name").value,
+        rating: parseInt(document.getElementById("rating").value),
+        comment: document.getElementById("comment").value,
+        product: document.getElementById("product").value
+    };
+
+    $.ajax({
+        type: "POST",
+        url: '/reviews',
+        data: review,
+        success: postReviewSuccess,
+        dataType: 'json'
+    });
+}
+
+
+function postReviewSuccess() {
+    var form = document.getElementById("reviewForm");
+    loadReviews();
 }
 
 function purchaseClicked() {
@@ -129,67 +171,60 @@ function Review(name, rating, comment, product) {
     this.rating = rating;
     this.comment = comment;
     this.product = product;
-  }
-  
-  var reviews = [];
-  
-  function addReview() {
+}
+
+var reviews = [];
+
+function addReview() {
     var nameInput = document.getElementById("name");
     var ratingInput = document.getElementById("rating");
     var commentInput = document.getElementById("comment");
     var productInput = document.getElementById("product");
-  
+
     var name = nameInput.value;
     var rating = parseInt(ratingInput.value);
     var comment = commentInput.value;
     var product = productInput.value;
-  
+
     var review = new Review(name, rating, comment, product);
     reviews.push(review);
-  
+
     nameInput.value = "";
     ratingInput.value = "";
     commentInput.value = "";
     productInput.value = "";
-  
-    displayReviews();
-  }
-  
-  
-  
-  function displayReviews() {
-    var container = document.getElementById("reviewsContainer");
-    var html = "<ul class='reviews-list'>";
-  
-    for (var i = 0; i < reviews.length; i++) {
-      var review = reviews[i];
-      html += "<li><h3>" + review.name + "</h3><p>" + review.comment + "</p><p>Rating: " + review.rating + "/5</p><p>Product: " + review.product + "</p></li>";
-    }
-  
-    html += "</ul>";
-    container.innerHTML = html;
-  
-    $(".reviews-list").listview();
-  }
-  
 
-// Define the Coupon class
-class Coupon {
-    constructor(name, discount, expiration, code) {
-        this.ID = Math.random().toString(16).slice(5);
-        this.name = name;
-        this.discount = discount;
-        this.expiration = expiration;
-        this.code = code;
-    }
 }
 
-// Define the coupons array
-const coupons = [
-    new Coupon("Save $5 on your next purchase", "$5", "2/28/2023", "tAc8"),
-    new Coupon("50% off any item", "50%", "3/31/2023", "fRb6"),
-    new Coupon("Free shipping on orders over $50", "Free", "4/30/2023", "qXy3"),
-];
+function loadReviews(){
+    $.ajax({
+        type: "GET",
+        url: '/reviews',
+        success: loadReviewSuccess,
+        dataType: 'json'
+    });
+}
+
+function loadReviewSuccess(resp){
+    reviews = resp;
+    displayReviews();
+}
+
+function displayReviews() {
+    var container = document.getElementById("reviewsContainer");
+    var html = "<ul class='reviews-list'>";
+
+    for (var i = 0; i < reviews.length; i++) {
+        var review = reviews[i];
+        html += "<li><h3>" + review.name + "</h3><p>" + review.comment + "</p><p>Rating: " + review.rating + "/5</p><p>Product: " + review.product + "</p></li>";
+    }
+
+    html += "</ul>";
+    container.innerHTML = html;
+
+    $(".reviews-list").listview();
+}
+
 
 // Define the function to display the list of coupons
 function showCouponList() {

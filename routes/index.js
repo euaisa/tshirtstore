@@ -14,7 +14,7 @@ router.get('/reviews', function(req, res, next) {
 
 router.post('/reviews', function(req, res, next) {
   reviews.push(req.body);
-  res.status(201).send(req.body);
+  res.status(201).json(req.body);
 });
 
 module.exports = router;
