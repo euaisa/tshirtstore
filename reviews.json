@@ -1,0 +1,14 @@
+[
+    {
+        "name": "Carla Morrison",
+        "rating": "5",
+        "comment": "I really liked the colors. Feels super comfy.",
+        "product": "The Science"
+    },
+    {
+        "name": "Lady Gaga",
+        "rating": "1",
+        "comment": "Terrible quality. The shipping was too slow. At least my cat has a new rag now.",
+        "product": "Superpower"
+    }
+]
